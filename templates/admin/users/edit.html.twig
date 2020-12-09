@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier les utilisateur{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Modifier l' utilisateur </h1>
+        {{ form_start(userFrom) }}
+        {{ form_rest(userFrom) }}
+        <button type="submit" class="btn btn-primary">Modifer</button>
+        {{ form_end(userFrom) }}
+    </div>
+{% endblock %}
