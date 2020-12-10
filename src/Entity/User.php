@@ -51,6 +51,16 @@ class User implements UserInterface
      */
     private $createdAt;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $cle_ssh_rsa;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $cle_ssh_rsa_public;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime();
@@ -172,5 +182,37 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): void
     {
         $this->isVerified = $isVerified;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCleSshRsa()
+    {
+        return $this->cle_ssh_rsa;
+    }
+
+    /**
+     * @param mixed $cle_ssh_rsa
+     */
+    public function setCleSshRsa($cle_ssh_rsa): void
+    {
+        $this->cle_ssh_rsa = $cle_ssh_rsa;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCleSshRsaPublic()
+    {
+        return $this->cle_ssh_rsa_public;
+    }
+
+    /**
+     * @param mixed $cle_ssh_rsa_public
+     */
+    public function setCleSshRsaPublic($cle_ssh_rsa_public): void
+    {
+        $this->cle_ssh_rsa_public = $cle_ssh_rsa_public;
     }
 }
