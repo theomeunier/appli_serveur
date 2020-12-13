@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Serveur{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="mt-4">Serveur</h1>
+
+        <div class="row mt-4">
+                <div class="col-md-3 mb-3 ">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ serveurs.name }}</h5>
+                            <p class="card-text">
+                                url: {{ serveurs.url }} <br>
+                                port: {{ serveurs.port }} <br>
+                                hébergeur: {{ serveurs.herbergeur }}</p>
+                            <p class="card-text">{{ serveurs.description }}</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+{% endblock %}

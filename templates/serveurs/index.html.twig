@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Serveur{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="mt-4">Serveur</h1>
+
+        <div class="row mt-4">
+            {% for serveurs in serveurs %}
+                <div class="col-md-3 mb-3 ">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ serveurs.name }}</h5>
+                            <p class="card-text">
+                                url: {{ serveurs.url }} <br>
+                                port: {{ serveurs.port }} <br>
+                                hébergeur: {{ serveurs.herbergeur }}</p>
+                            <p class="card-text">{{ serveurs.description }}</p>
+                            <a href="{{ path('show_serveurs', {id: serveurs.id}) }}" class="btn btn-primary">Voir
+                                plus</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}
